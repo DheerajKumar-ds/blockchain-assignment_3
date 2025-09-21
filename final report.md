@@ -1,6 +1,6 @@
 # Activity 3 — Build, Deploy & Operate a Production-Style ERC-20 on DIDLab
 
-## 📌 Project Overview
+## Project Overview
 This project implements **CampusCreditV2** (Team token: **CAMP**), a gas-aware ERC-20 with:
 - **Cap** enforced on mint
 - **Pausable** transfers
@@ -11,7 +11,7 @@ Deployed on **DIDLab Team 01** network.
 
 ---
 
-## 🔧 Setup
+## Setup
 
 ### Requirements
 - Node.js 22.x LTS  
@@ -42,7 +42,7 @@ TOKEN_ADDRESS=0x5fbdb2315678afecb367f032d93f642f64180aa3
 
 ---
 
-## ⚙️ Deployment
+## Deployment
 
 Deploy contract:
 ```bash
@@ -58,7 +58,7 @@ Block: 1
 
 ---
 
-## 💸 Interaction Scripts
+## Interaction Scripts
 
 ### Transfer + Approve
 ```bash
@@ -92,7 +92,7 @@ Shows `RoleGranted`, `Transfer`, and `Approval` events.
 
 ---
 
-## 📂 Code Files
+## Code Files
 
 - [CampusCreditV2.sol](contracts/CampusCreditV2.sol) — ERC-20 contract with cap, roles, pause, and gas-aware airdrop
 - [deploy.ts](scripts/deploy.ts) — Deploys the token contract
@@ -145,7 +145,7 @@ Shows `RoleGranted`, `Transfer`, and `Approval` events.
 
 ---
 
-## 💡 Why our airdrop is gas-aware
+## Why our airdrop is gas-aware
 
 The `airdrop` function in **CampusCreditV2** is designed to minimize gas costs compared to sending multiple individual transfers:
 
@@ -163,9 +163,9 @@ The `airdrop` function in **CampusCreditV2** is designed to minimize gas costs c
 4. **Reduced Calldata Overhead**  
    Recipients and amounts are passed in as arrays once, instead of re-encoding arguments for each transaction.
 
-✅ Result: our console output shows that a **batch airdrop saved ~24.68% gas** compared to individual transfers, proving the function is gas-efficient.
+Result: our console output shows that a **batch airdrop saved ~24.68% gas** compared to individual transfers, proving the function is gas-efficient.
 
 ---
 
-## ✅ Conclusion
+## Conclusion
 This project demonstrates deploying and operating a production-style ERC-20 token on DIDLab, verifying transfers, approvals, airdrops, and gas efficiency both via scripts and MetaMask.
